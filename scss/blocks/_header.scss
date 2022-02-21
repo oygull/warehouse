@@ -70,18 +70,109 @@
   border-top: 1px solid #2e6cb2;
 }
 .nav__item{
+  position: relative;
   padding: 20px;
   &--active{
-    background-color: $light-blue
+    background-color: $light-blue;
+  }
+  .nav__hoverbox{
+    width: 690px;
+    height: 470px;
+    justify-content: space-between;
+    box-shadow: 0 0 15px #0000001a;
+    background-color: #fff;
+    position: absolute;
+    top: 62px;
+    left: -200px;
+    z-index: 100;
+    padding: 30px 40px;
+    display: none;
+  }
+  &:hover .nav__hoverbox{
+    display: flex;
+    animation: fade 0.8s ease;
+  }
+  &:hover{
+    background-color: $light-blue;
+  }
+  .hoverbox2{
+    position: absolute;
+    top: 62px;
+    left: 0;
+    width: 270px;
+    box-shadow: 0 0 15px #0000001a;
+    background-color: #fff;
+    z-index: 100;
+    @include list-unstyled();
+    padding: 10px 20px;
+    animation: fade 0.8s ease;
+    display: none;
+  }
+  &:hover .hoverbox2{
+    display: block;
+    animation: fade 1s ease;
+  }
+  .nav__hoverbox3{
+    width: 890px;
+    justify-content: space-between;
+    box-shadow: 0 0 15px #0000001a;
+    background-color: #fff;
+    position: absolute;
+    top: 62px;
+    left: -450px;
+    z-index: 100;
+    padding: 30px 40px;
+    display: none;
+  }
+  &:hover .nav__hoverbox3{
+    display: flex;
+    animation: fade 0.8s ease;
   }
 }
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.hoverbox__inner{
+  width: 46%;
+}
+.hoverbox__inner2{
+  width: 30%;
+}
+.hoverbox__title{
+  color: #222;
+  font-size: 14px;
+  font-weight: 700;
+}
 .nav__link{
+  position: relative;
   @include link(#fff);
   font-size: 12px;
   line-height: 20px;
   font-weight: 500;
   text-transform: uppercase;
- 
+    &:hover{
+      color: #fff;
+    }
+}
+.hoverbox__list{
+  @include list-unstyled();
+}
+.hoverbox__item{
+  padding: 10px 0;
+  &:not(:last-child){
+    border-bottom: 1px solid #ededed;
+  }
+}
+
+.hoverbox__link{
+  @include link(#666);
+  font-size: 13px;
+  font-family: $roboto-font;
 }
 .modal-dialog{
   width: 830px;
