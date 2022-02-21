@@ -1,0 +1,151 @@
+.hero__subheading{
+  font-size: 30px;
+  color: #1477dd;;
+  padding: 0 15px 7px;
+  text-transform: capitalize;
+  font-weight: 900;
+  animation: subheading  1s ease;
+      &--third{
+        color: #da465b;
+      }
+
+  span{
+    font-size: 16px;
+    position: relative;
+    top: -10px;
+  }
+}
+@keyframes subheading {
+  0%{
+    transform: translate(0,100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+.hero__title{
+  font-size: 38px;
+  color: #000;
+  padding: 0 15px 23px;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 50px;
+  animation: title  1s cubic-bezier(.17,.67,.53,1.1);
+}
+
+@keyframes title {
+  0%{
+    opacity: 0;
+    transform: translate3d(-5000px,0,0);
+  }
+  100%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+.hero__text{
+  padding: 0 15px;
+  font-weight: 400;
+  margin-bottom: 33px;
+  line-height: 22px;
+  color: #424242;
+  font-size: 13px;
+  animation: text  1s cubic-bezier(.17,.67,.53,1.1);
+}
+@keyframes text {
+  0%{
+    opacity: 0;
+    transform: translate3d(5000px,0,0);
+  }
+  100%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+.carousel-caption{
+  width: 36%;
+    &--first{
+      position: absolute;
+      top: 50%;
+      left: 8%;
+      transform: translate(0,-50%);
+      text-align: start;
+    }
+    &--second{
+      text-align: center;
+      position: absolute;
+      top: 4%;
+      left: 50%;
+      transform: translate(-50%,0);
+    }
+}
+.hero{
+  padding: 0;
+}
+.container-fluid{
+  padding: 0 !important;
+}
+.carousel-item{
+  img{
+    transform: scale(1.2);
+    position: relative;
+    top: 50px;
+    left: 30px;
+  }
+}
+.hero__control,
+.hero__control{
+  position: absolute;
+  background-color: #707070;
+  padding: 20px;
+  .bx{
+    color: #fff;
+    font-size: 30px;
+  }
+}
+.carousel-control-prev,
+.carousel-control-next{
+  width: 4%;
+}
+.hero__btn{
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 40px;
+  background: #0869cd;
+  padding: 8px 30px;
+  width: 160px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  color: #fff;
+  animation: btn  1s ease;
+  @include flex-center();
+
+    &--second{
+      background:#f8891b;
+      margin:  0 auto;
+    }
+    &--third{
+      background-color: #da465b;
+      margin:  0 auto;
+    }
+   span{
+     font-size: 18px;
+     color: #fff;
+    margin-right: 6px;
+
+   }
+}
+@keyframes btn{
+  0%{
+    transform: translate(0,-100px);
+    opacity: 0;
+  }
+  100%{
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
