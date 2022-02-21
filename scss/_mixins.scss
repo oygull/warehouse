@@ -3,3 +3,13 @@
   margin: 0;
   list-style: none;
 }
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin link($link-color) {
+  text-decoration: none;
+  color: $link-color;
+}
+
