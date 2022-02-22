@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 35px 0;
+  padding: 30px 0;
 }
 .header__search{
   width: 600px;
@@ -39,7 +39,7 @@
   background-color: transparent;
   border: none;
   color: #cbd9ec;
-  font-size: 28px;
+  font-size: 24px;
   margin: 0px 4px;
   transition: all 0.4s ease;
 
@@ -55,8 +55,8 @@
         font-size: 14px;
         background-color:#fd6666;
         border-radius: 50%;
-        top: -6px;
-        left: 12px;
+        top: -10px;
+        left: 10px;
       }
     }
 }
@@ -427,6 +427,35 @@
 .sidebar{
   display: none;
 }
+.on-top{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  @include flex-center();
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #105caa;
+  background-color: #fff;
+  color: #105caa;
+  outline: 1px solid #105caa;
+  z-index: 1000;
+  text-decoration: none;
+  border: 3px solid transparent;
+  transition: all 0.4s ease;
+
+  &:hover{
+    border: 3px solid #fff;
+    background-color: #105caa;
+    outline: 2px solid #105caa;
+    .bx{
+      color: #fff;
+    }
+  }
+  .bx{
+    font-size: 20px;
+  }
+}
 @media screen and (max-width:1200px) {
   .header__search{
     max-width:560px;
@@ -599,6 +628,83 @@
         color: rgba(27, 27, 27, 0.822);
         font-size: 22px;
       }
+  }
+  .on-top{
+    display: none;
+  }
+  .nav__item{
+    position: relative;
+    padding: 20px;
+    &--active{
+      background-color: $light-blue;
+    }
+    .nav__hoverbox{
+      width: 100%;
+      height: 470px;
+      justify-content: space-between;
+      box-shadow: 0 0 15px #0000001a;
+      background-color: #fff;
+      position: absolute;
+      top: 62px;
+      left: 0;
+      z-index: 100;
+      padding: 30px 40px;
+      display: none;
+    }
+    &:hover .nav__hoverbox{
+      display: flex;
+      animation: fade 0.6s ease;
+    }
+
+    &:hover {
+      background-color: #fff;
+ 
+      .nav__link{
+        color: $primary-color;
+      }
+    }
+    .hoverbox2{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-shadow: 0 0 15px #0000001a;
+      background-color: #fff;
+      z-index: 100;
+      @include list-unstyled();
+      padding: 10px 20px;
+      animation: fade 0.6s ease;
+      display: none;
+    }
+    &:hover .hoverbox2{
+      display: block;
+      animation: fade 1s ease;
+    }
+    .nav__hoverbox3{
+      width: 100%;
+      justify-content: space-between;
+      box-shadow: 0 0 15px #0000001a;
+      background-color: #fff;
+      position: absolute;
+      top: 62px;
+      left: 0;
+      z-index: 100;
+      padding: 30px 40px;
+      display: none;
+    }
+    &:hover .nav__hoverbox3{
+      display: flex;
+      animation: fade 0.6s ease;
+    }
+  }
+  .nav__item--active{
+    background-color: #fff;
+  }
+  .hoverbox__link{
+    font-size: 9px;
+  }
+  .hoverbox__title{
+    font-size: 10px;
   }
 }
 @media screen and (max-width:576px) {
