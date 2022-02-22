@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>Warehouse</title>
     <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
@@ -21,35 +23,296 @@
         <div class="header__inner">
           <a href="#" class="header__logo">
             <img class="header__logo--white" src="images/white-logo.png" alt="white-logo">
+            <img class="header__logo--dark"  src="images/dark-logo.png" alt="dark-logo">
           </a>
           <div class="header__search">
             <input class="header__input" type="text" placeholder="Enter your keyword">
             <span><i class='bx bx-search'></i></span>
           </div>
           <div class="header__btns">
-            <button class="header__btn header__btn--user"><i class='bx bx-user'></i></button>
+            <button type="button" class="header__btn header__btn--user" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class='bx bx-user'></i></button>
             <button class="header__btn header__btn--heart"><i class='bx bx-heart' ></i></button>
             <button class="header__btn header__btn--store"><i class='bx bx-store' ></i>
             <span>0</span>
             </button>
-            <button class="header__btn header__btn--settings"><i class='bx bx-cog'></i></button>
+            <button id="settings" class="header__btn header__btn--settings"><i class='bx bx-cog'></i></button>
           </div>
+          <button id="menuBtn" class="btn-menu"><i class='bx bx-menu' ></i></button>
         </div>
       </div>
     </header>
 
     <!-- Navigation -->
 
-    <nav class="nav">
-        <div class="container">
+    <nav id="modalNav" class="nav">
+      <div id="modalNavBox" class="navbox">
+        <div class="btnbox">
+          <button id="closeNav" class="close-btn"><i class='bx bx-x' ></i></button>
+        </div>
+          <div class="container">
+          <ul class="nav__list">
+            <li class="nav__item nav__item--active"><a href="#" class="nav__link ">Home</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">All Demos <i class='bx bx-chevron-down' ></i></a>
+              <div class="nav__hoverbox">
+                <div class="hoverbox__inner">
+                  <h3 class="hoverbox__title">Homepage electronic v1</h3>
+                  <ul class="hoverbox__list">
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 1</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 2</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 3</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 4</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 5</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 6</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 7</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 8</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 9</a></li>
+                  </ul>
+                </div>
+                <div class="hoverbox__inner">
+                  <h3 class="hoverbox__title">Homepage electronic v2</h3>
+                  <ul class="hoverbox__list">
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 10</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 11</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 12</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 13</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 14</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 15</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 16</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 17</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 18</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Pages <i class='bx bx-chevron-down' ></i></a>
+            <ul class="hoverbox2">
+              <li class="hoverbox__item"><a href="#" class="hoverbox__link">Landing Page</a></li>
+              <li class="hoverbox__item"><a href="#" class="hoverbox__link">Inner Pages</a></li>
+              <li class="hoverbox__item"><a href="#" class="hoverbox__link">Inner Pages</a></li>
+            </ul>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Categpries <i class='bx bx-chevron-down' ></i></a>
+              <div class="nav__hoverbox3">
+                <div class="hoverbox__inner2">
+                  <h3 class="hoverbox__title">Collection Page</h3>
+                  <ul class="hoverbox__list">
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Without Sidebar Layout</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Left Sidebar Layout</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Right Sidebar Layout</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Full Sidebar Layout</a></li>
+                   
+                  </ul>
+                </div>
+                <div class="hoverbox__inner2">
+                  <h3 class="hoverbox__title">Product Detail Page</h3>
+                  <ul class="hoverbox__list">
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Accordions Description 1</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Accordions Description 2</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Accordions Description 3</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Product Tab Describtion</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Product Thumbnail Vertical</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Product With Sidebar</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Product All Thumbnail</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Product Grid Thumbnail</a></li>
+                  </ul>
+                </div>
+                <div class="hoverbox__inner2">
+                  <h3 class="hoverbox__title">Colour Variant Style</h3>
+                  <ul class="hoverbox__list">
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Color Variant - Text box</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Color Variant - Image</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Color Variant - Color box</a></li>
+                    <li class="hoverbox__item"><a href="" class="hoverbox__link">Color Variant - Dropdown box</a></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">Blog <i class='bx bx-chevron-down' ></i></a>
+              <ul class="hoverbox2">
+                <li class="hoverbox__item"><a href="#" class="hoverbox__link">Blog sidebar</a></li>
+                <li class="hoverbox__item"><a href="#" class="hoverbox__link">Blog none sidebar</a></li>
+                <li class="hoverbox__item"><a href="#" class="hoverbox__link">Blog column</a></li>
+                <li class="hoverbox__item"><a href="#" class="hoverbox__link">Blog list</a></li>
+                <li class="hoverbox__item"><a href="#" class="hoverbox__link">Blog Detail</a></li>
+              </ul></li>
+          </ul>
+          
+          </div>
+      </div>
+    
+    </nav>
+
+<!-- Scroll Header -->
+
+<header id="header"  class="scroll-header">
+  <div class="container">
+    <div class="scroll__header__inner">
+      <a href="#" class="header__logo">
+        <img class="header__logo--white" src="images/white-logo.png" alt="white-logo">
+        <img class="header__logo--dark"  src="images/dark-logo.png" alt="dark-logo">
+      </a>
+      <div class="scroll__nav">
         <ul class="nav__list">
           <li class="nav__item nav__item--active"><a href="#" class="nav__link ">Home</a></li>
-          <li class="nav__item"><a href="#" class="nav__link">All Demos <i class='bx bx-chevron-down' ></i></a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Pages <i class='bx bx-chevron-down' ></i></a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Categpries <i class='bx bx-chevron-down' ></i></a></li>
-          <li class="nav__item"><a href="#" class="nav__link">Blog <i class='bx bx-chevron-down' ></i></a></li>
+          <li class="nav__item"><a href="#" class="nav__link">All Demos <i class='bx bx-chevron-down' ></i></a>
+            <div class="nav__hoverbox">
+              <div class="hoverbox__inner">
+                <h3 class="hoverbox__title">Homepage electronic v1</h3>
+                <ul class="hoverbox__list">
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 1</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 2</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 3</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 4</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 5</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 6</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 7</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 8</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 9</a></li>
+                </ul>
+              </div>
+              <div class="hoverbox__inner">
+                <h3 class="hoverbox__title">Homepage electronic v2</h3>
+                <ul class="hoverbox__list">
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 10</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 11</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 12</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 13</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 14</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 15</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 16</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 17</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Homeage Electronics 18</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav__item"><a href="#" class="nav__link">Pages <i class='bx bx-chevron-down' ></i></a>
+          <ul class="hoverbox2">
+            <li class="hoverbox__item"><a href="#" class="hoverbox__link">Landing Page</a></li>
+            <li class="hoverbox__item"><a href="#" class="hoverbox__link">Inner Pages</a></li>
+            <li class="hoverbox__item"><a href="#" class="hoverbox__link">Inner Pages</a></li>
+          </ul>
+          </li>
+          <li class="nav__item"><a href="#" class="nav__link">Categpries <i class='bx bx-chevron-down' ></i></a>
+            <div class="nav__hoverbox3">
+              <div class="hoverbox__inner2">
+                <h3 class="hoverbox__title">Collection Page</h3>
+                <ul class="hoverbox__list">
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Without Sidebar Layout</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Left Sidebar Layout</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Right Sidebar Layout</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Full Sidebar Layout</a></li>
+                 
+                </ul>
+              </div>
+              <div class="hoverbox__inner2">
+                <h3 class="hoverbox__title">Product Detail Page</h3>
+                <ul class="hoverbox__list">
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Accordions Description 1</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Accordions Description 2</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Accordions Description 3</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Product Tab Describtion</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Product Thumbnail Vertical</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Product With Sidebar</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Product All Thumbnail</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Product Grid Thumbnail</a></li>
+                </ul>
+              </div>
+              <div class="hoverbox__inner2">
+                <h3 class="hoverbox__title">Colour Variant Style</h3>
+                <ul class="hoverbox__list">
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Color Variant - Text box</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Color Variant - Image</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Color Variant - Color box</a></li>
+                  <li class="hoverbox__item"><a href="" class="hoverbox__link">Color Variant - Dropdown box</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav__item"><a href="#" class="nav__link">Blog <i class='bx bx-chevron-down' ></i></a>
+            <ul class="hoverbox2">
+              <li class="hoverbox__item"><a href="#" class="hoverbox__link">Blog sidebar</a></li>
+              <li class="hoverbox__item"><a href="#" class="hoverbox__link">Blog none sidebar</a></li>
+              <li class="hoverbox__item"><a href="#" class="hoverbox__link">Blog column</a></li>
+              <li class="hoverbox__item"><a href="#" class="hoverbox__link">Blog list</a></li>
+              <li class="hoverbox__item"><a href="#" class="hoverbox__link">Blog Detail</a></li>
+            </ul></li>
         </ul>
+      </div>
+      <div class="header__btns">
+        <button type="button" class="header__btn header__btn--user" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class='bx bx-user'></i></button>
+        <button class="header__btn header__btn--heart"><i class='bx bx-heart' ></i></button>
+        <button class="header__btn header__btn--store"><i class='bx bx-store' ></i>
+        <span>0</span>
+        </button>
+        <button id="settings" class="header__btn header__btn--settings"><i class='bx bx-cog'></i></button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Scroll Sidebar -->
+
+<section id="scrollSidebar" class="sidebar">
+  <div class="container">
+   <ul class="sidebar__list">
+     <li class="sidebar__item"><a href="#" class="sidebar__link">
+       <span><i class='bx bx-home'></i></span> Home
+     </a></li>
+     <li class="sidebar__item"><a href="#" class="sidebar__link">
+       <span><i class='bx bx-heart' ></i></span> Whishlist
+     </a></li>
+     <li class="sidebar__item"><a href="#" class="sidebar__link">
+       <span><i class='bx bx-basket' ></i></span> Cart
+     </a></li>
+     <li class="sidebar__item"><a href="#" class="sidebar__link">
+       <span><i class='bx bx-cog' ></i></span> Setting
+     </a></li>
+     <li class="sidebar__item"><a href="#" class="sidebar__link">
+       <span><i class='bx bxs-to-top' ></i></span> On Top
+     </a></li>
+   </ul>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <button type="button" class="btn-cose" data-bs-dismiss="modal" aria-label="Close"><i class='bx bx-x'></i></button>
+      <div class="modal-body">
+       <div class="modal__inner">
+        <div class="account">
+          <h3 class="modal__title">Create an account</h3>
+          <div class="modal__line"></div>
+          <p class="modal__text">No account? Create one here</p>
+          <form class="account__form">
+            <div class="modal__input">
+              <span><i class='bx bx-user' ></i></span>
+              <input class="account__input" type="text" placeholder="First Name" required>
+            </div>
+            <div class="modal__input">
+              <span><i class='bx bx-user' ></i></span>
+              <input class="account__input" type="text" placeholder="Last Name" required>
+            </div>
+            <div class="modal__input">
+              <span><i class='bx bx-envelope' ></i></span>
+              <input class="account__input" type="email" placeholder="Email" required>
+            </div>
+            <div class="modal__input">
+              <span><i class='bx bx-lock-open-alt' ></i></span>
+              <input class="account__input" type="password" placeholder="Password" required>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <label class="form-check-label" for="flexCheckDefault">
+                Sign up for our newsletter
+              </label>
+            </div>
+            <button type="submit" class="btn form__btn">Register</button>
+          </form>
         </div>
+
     </nav>
 
 
@@ -1454,6 +1717,138 @@
 
 
   
+=======
+        <div class="login">
+          <h3 class="modal__title">Login</h3>
+          <div class="modal__line"></div>
+          <p class="modal__text">Insert your account information here:</p>
+          <form class="account__form">
+            <div class="modal__input">
+              <span><i class='bx bx-envelope' ></i></span>
+              <input class="account__input" type="email" placeholder="Email" required>
+            </div>
+            <div class="modal__input">
+              <span><i class='bx bx-lock-open-alt' ></i></span>
+              <input class="account__input" type="password" placeholder="Password" required>
+            </div>
+            <a href="#" class="account__link"><i class='bx bxs-envelope' ></i> Forget your <span>Password?</span></a>
+            <button type="submit" class="btn form__btn">LOGIN</button>
+          </form>
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Settings modal -->
+
+<section id="modalSettings" class="settings">
+  <ul class="settings__list">
+    <li class="settings__item"><a href="#" class="settings__link"><i class='bx bx-cog' ></i> Login</a></li>
+    <li class="settings__item"><a href="#" class="settings__link"><i class='bx bx-arrow-from-left' ></i>Register Account</a></li>
+    <li class="settings__item"><a href="#" class="settings__link"><i class='bx bxs-check-circle' ></i>Check Out</a></li>
+    <li class="settings__item"><a href="#" class="settings__link"><i class='bx bxs-heart' ></i>My Wishlist</a></li>
+  </ul>
+  <h3 class="settings__heading">Currency</h3>
+<ul class="currency__list">
+  <li class="currency__item currency__item--active"><a href="#" class="currency__link">USD</a></li>
+  <li class="currency__item"><a href="#" class="currency__link">EUR</a></li>
+  <li class="currency__item"><a href="#" class="currency__link">GBP</a></li>
+</ul>
+</section>
+
+<!-- Hero -->
+
+<section class="hero">
+  <div class="container-fluid">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/hero-img1.jpeg" class="ml-5 d-block first-img" alt="...">
+          <div class="carousel-caption carousel-caption--first d-none d-md-block">
+            <h3 class="hero__subheading">From <span>$</span> 1900</h3>
+            <h2 class="hero__title">Vinova smartphone</h2>
+            <p class="hero__text">Pros love iMac. So we created one just for you. It’s packed with the most powerful graphics and processors ever in a Mac, along with the most advanced storage, memory.</p>
+            <button class="hero__btn"><span><i class='bx bxs-shopping-bag'></i></span>Shop Now</button>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/hero-img2.jpeg" class="d-block w-100" alt="...">
+          <div class="carousel-caption carousel-caption--second d-none d-md-block">
+            <h3 class="hero__subheading">From <span>$</span> 1900</h3>
+            <h2 class="hero__title">Macbookair</h2>
+            <p class="hero__text">Powerful creativity and productivity tools live inside every Mac — apps 
+              that help you explore, connect, and work more efficiently.</p>
+            <button class="hero__btn hero__btn--second "><span><i class='bx bxs-shopping-bag'></i></span>Shop Now</button>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/hero-img3.jpeg" class="d-block w-100" alt="...">
+          <div class="carousel-caption carousel-caption--second d-none d-md-block">
+            <h3 class="hero__subheading hero__subheading--third">From <span>$</span> 2900</h3>
+            <h2 class="hero__title">Vinova Smartphone</h2>
+            <p class="hero__text">All‑screen design. Longest battery life ever in an NovaPhone 
+              Fastest performance. Studio‑quality photos.</p>
+            <button class="hero__btn hero__btn--third "><span><i class='bx bxs-shopping-bag'></i></span>Shop Now</button>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="hero__control"><i class='bx bx-chevron-left' ></i></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="hero__control"><i class='bx bx-chevron-right' ></i></span>  
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Shipping -->
+
+<section class="shipping">
+  <div class="container-fluid">
+    <div class="shipping__inner row">
+      <div class="shipping__item col-xs-12 col-md-3">
+        <div class="test-shine shine-first"></div>
+      </div>
+      <div class="shipping__item shipping__item--second  col-xs-12 col-md-6">
+        <div class="test-shine shine-second"></div>
+      </div>
+      <div class="shipping__item col-xs-12 col-md-3">
+        <div class="test-shine shine-third"></div>
+      </div>
+    </div>
+    <div class="shipping__content row">
+      <div class="shipping__desc col-xs-12 col-md-4">
+        <img src="images/shipping-desc1.png" alt="shipping__desc">
+        <h3 class="shipping__title">Worldwide Delivary</h3>
+        <p class="shipping__text">We work with the biggest delivery networks. It doesn't matter where in the world you are.</p>
+      </div>
+      <div class="shipping__desc col-xs-12 col-md-4">
+        <img src="images/shipping-desc2.png" alt="shipping__desc">
+        <h3 class="shipping__title">Free Shipping</h3>
+        <p class="shipping__text">Stop wondering about shipping costs, what you see is what you pay.</p>
+      </div>
+      <div class="shipping__desc col-xs-12 col-md-4">
+        <img src="images/shipping-desc3.png" alt="shipping__desc">
+        <h3 class="shipping__title">Money Back Guarantee</h3>
+        <p class="shipping__text">Got a problem with the product? Don't worry, we have a 30 day money back guarantee.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="vinova">
+  <div class="container-fluid">
+    <div class="test-shine vinova__shine"></div>
+  </div>
+</section>
+
+<a href="#" class="on-top"><i class='bx bx-chevron-up' ></i></a>
+
 
     <script src="js/main.js"></script>
   </body>

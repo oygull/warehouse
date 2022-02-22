@@ -1,3 +1,5 @@
+
+
 .site-header{
   background-color: $light-blue;
 }
@@ -5,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 35px 0;
+  padding: 30px 0;
 }
 .header__search{
   width: 600px;
@@ -39,9 +41,13 @@
   background-color: transparent;
   border: none;
   color: #cbd9ec;
-  font-size: 28px;
+  font-size: 24px;
   margin: 0px 4px;
+  transition: all 0.4s ease;
 
+    &:hover{
+      color: #fb7c7c;
+    }
     &--store{
       position: relative;
       span{
@@ -51,30 +57,665 @@
         font-size: 14px;
         background-color:#fd6666;
         border-radius: 50%;
-        top: -12px;
-        left: 12px;
+        top: -10px;
+        left: 10px;
       }
     }
 }
 .nav__list{
-  @include flex-center;
-  @include list-unstyled;
+  @include flex-center();
+  @include list-unstyled();
 }
 .nav{
+  @include flex-center();
   background-color: $primary-color;
   border-top: 1px solid #2e6cb2;
 }
 .nav__item{
+  position: relative;
   padding: 20px;
   &--active{
-    background-color: $light-blue
+    background-color: $light-blue;
+  }
+  .nav__hoverbox{
+    width: 690px;
+    height: 470px;
+    justify-content: space-between;
+    box-shadow: 0 0 15px #0000001a;
+    background-color: #fff;
+    position: absolute;
+    top: 62px;
+    left: -200px;
+    z-index: 100;
+    padding: 30px 40px;
+    display: none;
+  }
+  &:hover .nav__hoverbox{
+    display: flex;
+    animation: fade 0.6s ease;
+  }
+  &:hover{
+    background-color: $light-blue;
+  }
+  .hoverbox2{
+    position: absolute;
+    top: 62px;
+    left: 0;
+    width: 270px;
+    box-shadow: 0 0 15px #0000001a;
+    background-color: #fff;
+    z-index: 100;
+    @include list-unstyled();
+    padding: 10px 20px;
+    animation: fade 0.6s ease;
+    display: none;
+  }
+  &:hover .hoverbox2{
+    display: block;
+    animation: fade 1s ease;
+  }
+  .nav__hoverbox3{
+    width: 890px;
+    justify-content: space-between;
+    box-shadow: 0 0 15px #0000001a;
+    background-color: #fff;
+    position: absolute;
+    top: 62px;
+    left: -450px;
+    z-index: 100;
+    padding: 30px 40px;
+    display: none;
+  }
+  &:hover .nav__hoverbox3{
+    display: flex;
+    animation: fade 0.6s ease;
   }
 }
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.hoverbox__inner{
+  width: 46%;
+}
+.hoverbox__inner2{
+  width: 30%;
+}
+.hoverbox__title{
+  color: #222;
+  font-size: 14px;
+  font-weight: 700;
+}
 .nav__link{
+  position: relative;
   @include link(#fff);
   font-size: 12px;
   line-height: 20px;
   font-weight: 500;
   text-transform: uppercase;
+    &:hover{
+      color: #fff;
+    }
+}
+.hoverbox__list{
+  @include list-unstyled();
+}
+.hoverbox__item{
+  padding: 10px 0;
+  &:not(:last-child){
+    border-bottom: 1px solid #ededed;
+  }
+}
+
+.hoverbox__link{
+  @include link(#666);
+  font-size: 13px;
+  font-family: $roboto-font;
+}
+.modal-dialog{
+  width: 830px;
+}
+.modal-content{
+  width: 830px;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+  max-height: 500px;
+  padding: 30px 15px;
+  box-shadow: 0 0 20px #0000008c;
+  border-radius: 7px;
+  position: relative;
+}
+.modal__inner{
+  display: flex;
+  justify-content: space-between;
+
+}
+.modal__title{
+  font-size: 16px;
+  color: #000;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 8px;
+}
+.modal__line{
+  width: 100%;
+  height: 1px;
+  background-color:#e5e5e8;
+  position: relative;
+  margin-bottom: 13px;
+
+   &::before{
+     content: '';
+     display: inline-block;
+     width: 50%;
+     height: 1px;
+     position: absolute;
+     top: 0;
+     left: 0;
+     background-color: #0f5caa;
+   }
+}
+.account{
+  width: 48%;
+}
+.login{
+  width: 48%;
+}
+.modal__text{
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+.modal__input{
+  width: 100%;
+  height: 46px;
+  border: 1px solid #e6e5e5;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
  
+  .account__input{
+    font-size: 12px;
+    color: #666;
+    font-weight: 400;
+    width: 100%;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+
+    &::placeholder{
+      color: #cdcccc;
+    }
+  
+  }
+  span{
+    width: 46px;
+    height: 46px;
+    @include flex-center;
+    border-right: 1px solid #e5e5e8;
+    color: #cdcccc;
+    font-size: 20px;
+  }
+}
+.form-check-label{
+  font-size: 11px;
+  font-family: $roboto-font;
+  color: #c3c3c3;
+  margin-bottom: 23px;
+}
+.form__btn{
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #222;
+  color: #fff;
+  font-size: 11px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  font-weight: 600;
+    &:hover{
+      background-color: #105caa;
+      color: #fff;
+    }
+}
+.account__link{
+  @include link(#bbb);
+  font-size: 11px;
+  font-family: $roboto-font;
+  display: block;
+  margin: 22px 0;
+  display: flex;
+  align-items: center;
+
+  .bx{
+    font-size: 18px;
+    color: #656565;
+    margin-right: 10px;
+  }
+  span{
+    color: #6fa4dc;
+    margin-left: 6px;
+  }
+}
+.btn-cose{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  transition: transform 0.6s ease;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 5px;
+  color: #aaa;
+  @include flex-center;
+  z-index: 100;
+
+  &:hover{
+    transform: rotate(180deg);
+    color: $primary-color;
+    transform-origin: center center;
+  }
+  .bx{
+    font-size: 22px;
+    font-weight: bold;
+  }
+ 
+}
+.settings{
+  width: 260px;
+  height: 0;
+  background-color: #fff;
+  box-shadow: 0 0 10px #0000001a;
+  position: absolute;
+  top: 120px;
+  right: 140px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  opacity: 0;
+  z-index: 1000;
+}
+.show-settings{
+  height: 260px;
+  padding: 10px 30px;
+  overflow: hidden;
+  opacity: 1
+}
+.settings__list{
+  @include list-unstyled;
+}
+.settings__item{
+    padding: 12px 7px;
+    border-bottom: 1px solid #afafafa8;
+}
+.currency__item--active{
+  .currency__link{
+    color: #0f5caa;
+  }
+}
+.settings__link{
+  @include link(#666);
+  font-size: 10px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+
+  .bx{
+    font-size: 20px;
+    margin-right: 5px;
+    color: #9c9c9c
+  }
+}
+.currency__list{
+  @include list-unstyled;
+}
+.currency__list{
+  display: flex;
+  align-items: center;
+}
+.currency__item{
+  margin-right: 10px;
+}
+.currency__link{
+  @include link(#666);
+  font-size: 10px;
+}
+.settings__heading{
+  font-size: 12px;
+  color: #222;
+  font-weight: bold;
+  font-family: $roboto-font;
+  margin-top: 14px;
+}
+.header__logo--dark{
+  display: none;
+}
+.btn-menu{
+  display: none;
+}
+.close-btn{
+  display: none;
+}
+.scroll-header{
+  background-color: $primary-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index: 1000;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  transition-delay: 0.2s;
+  opacity: 0;
+}
+.scrollnav__list{
+  display: flex;
+}
+.scroll__header__inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.show-header{
+  height: 64px;
+  overflow: hidden;
+  opacity: 1;
+}
+.sidebar{
+  display: none;
+}
+.on-top{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  @include flex-center();
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #105caa;
+  background-color: #fff;
+  color: #105caa;
+  outline: 1px solid #105caa;
+  z-index: 1000;
+  text-decoration: none;
+  border: 3px solid transparent;
+  transition: all 0.4s ease;
+
+  &:hover{
+    border: 3px solid #fff;
+    background-color: #105caa;
+    outline: 2px solid #105caa;
+    .bx{
+      color: #fff;
+    }
+  }
+  .bx{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .header__search{
+    max-width:560px;
+  }
+  .header__btn{
+    margin: 0px 0px;
+  }
+}
+@media screen and (max-width:992px) {
+  .header__logo--white{
+    width: 120px;
+    height: 18px;
+  }
+  .header__btn{
+    margin: 0px 0px;
+    .bx{
+      font-size: 20px;
+    }
+  }
+  .header__search{
+    max-width:500px;
+  }
+}
+@media screen and (max-width:768px) {
+  .header__btns{
+    display: none;
+  }
+  .header__inner{
+    padding: 12px 0;
+  }
+  .nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.37);
+    overflow: hidden;
+    z-index: 1000;
+  }
+  .show-nav{
+    width: 100%;
+    overflow: hidden;
+  }
+  .navbox{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    transition: all 0.4s ease-in-out;
+    z-index: 1200;
+  }
+  .show-navbox{
+    width: 50%;
+    overflow: hidden;
+  }
+  .nav__list{
+    flex-direction: column;
+    background-color: $primary-color;
+    background-color: #fff;
+    margin-top: 60px;
+  }
+  .close-btn{
+    display: flex;
+    @include flex-center();
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    width: 50px;
+    margin: 16px auto;
+      .bx{
+        font-size: 20px;
+      }
+  }
+  .nav__item--active{
+    background-color: transparent;
+    .nav__link{
+      color: #0f5caa;
+    }
+  }
+  .nav__item{
+    width: 100%;
+    padding: 16px 5px;
+    border-bottom: 1px dashed #e1e1e1;
+  }
+  .nav__link{
+    color: #9c9c9c;
+    display: flex;
+    justify-content: space-between;
+      .bx{
+        transform: rotate(-90deg);
+        font-size: 20px;
+      }
+  }
+
+  .btnbox{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: $primary-color;
+  }
+  .header{
+    background-color: #fff;
+  }
+  .header__logo--white{
+    display: none;
+  }
+  .header__logo--dark{
+    display: block;
+  }
+  .header__search{
+    background-color: #f4f4f4;
+    max-width: 420px;
+    height: 34px;
+    margin: 0px 10px;
+    .bx{
+      color: #222;
+      font-size: 16px
+    }
+  }
+  .btn-menu{
+   @include flex-center();
+   background-color: transparent;
+   border: none;
+   .bx{
+     font-size: 22px;
+   }
+  }
+  .header__input{
+    background-color:  #f4f4f4;
+    font-size: 10px;
+      &::placeholder{
+        font-size: 10px;
+      }
+  }
+  .header__logo--dark{
+    max-width: 150px;
+    height: 23px;
+  }
+  .scroll-header{
+    display: none;
+  }
+  .sidebar{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 9;
+    left: 0;
+    padding: 5px 15px;
+    background: #fff;
+    box-shadow: 0 -2px 5px -2px #0003;
+  }
+  .sidebar__list{
+   @include flex-center();
+    @include list-unstyled();
+  }
+  .sidebar__item{
+    margin: 6px 16px
+  }
+  .sidebar__link{
+    @include flex-center();
+    flex-direction: column;
+    @include link(#c4c4c4);
+    font-size: 10px;
+    font-family: $roboto-font;
+      span {
+        color: rgba(27, 27, 27, 0.822);
+        font-size: 22px;
+      }
+  }
+  .on-top{
+    display: none;
+  }
+  .nav__item{
+    position: relative;
+    padding: 20px 0 20px 20px;
+    &--active{
+      background-color: $light-blue;
+    }
+    .nav__hoverbox{
+      width: 100%;
+      height: 470px;
+      justify-content: space-between;
+      box-shadow: 0 0 15px #0000001a;
+      background-color: #fff;
+      position: absolute;
+      top: 62px;
+      left: 0;
+      z-index: 100;
+      padding: 30px 10px;
+      display: none;
+    }
+    &:hover .nav__hoverbox{
+      display: flex;
+      animation: fade 0.6s ease;
+    }
+
+    &:hover {
+      background-color: #fff;
+ 
+      .nav__link{
+        color: $primary-color;
+      }
+    }
+    .hoverbox2{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      box-shadow: 0 0 15px #0000001a;
+      background-color: #fff;
+      z-index: 100;
+      @include list-unstyled();
+      padding: 10px 10px;
+      animation: fade 0.6s ease;
+      display: none;
+    }
+    &:hover .hoverbox2{
+      display: block;
+      animation: fade 1s ease;
+    }
+    .nav__hoverbox3{
+      width: 100%;
+      justify-content: space-between;
+      box-shadow: 0 0 15px #0000001a;
+      background-color: #fff;
+      position: absolute;
+      top: 62px;
+      left: 0;
+      z-index: 100;
+      padding: 30px 10px;
+      display: none;
+    }
+    &:hover .nav__hoverbox3{
+      display: flex;
+      animation: fade 0.6s ease;
+    }
+  }
+  .nav__item--active{
+    background-color: #fff;
+  }
+  .hoverbox__link{
+    font-size: 9px;
+  }
+  .hoverbox__title{
+    font-size: 10px;
+  }
+}
+@media screen and (max-width:576px) {
+  .header__logo--dark{
+    max-width: 90px;
+    height: 13px;
+  }
+  .sidebar__item{
+    margin: 6px 10px
+  }
 }
