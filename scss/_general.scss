@@ -21,8 +21,14 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #fff;
   color: $text-color;
+  transition: all 0.4s ease;
 }
-
+.canvasmenu-right {
+  position: relative;
+  overflow: hidden;
+  right: 150px;
+  transition: all 0.4s ease;
+}
 img {
   max-width: 100%;
   height: auto;

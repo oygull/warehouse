@@ -1,3 +1,5 @@
+
+
 .site-header{
   background-color: $light-blue;
 }
@@ -456,6 +458,7 @@
     font-size: 20px;
   }
 }
+
 @media screen and (max-width:1200px) {
   .header__search{
     max-width:560px;
@@ -634,7 +637,7 @@
   }
   .nav__item{
     position: relative;
-    padding: 20px;
+    padding: 20px 0 20px 20px;
     &--active{
       background-color: $light-blue;
     }
@@ -648,7 +651,7 @@
       top: 62px;
       left: 0;
       z-index: 100;
-      padding: 30px 40px;
+      padding: 30px 10px;
       display: none;
     }
     &:hover .nav__hoverbox{
@@ -672,7 +675,7 @@
       background-color: #fff;
       z-index: 100;
       @include list-unstyled();
-      padding: 10px 20px;
+      padding: 10px 10px;
       animation: fade 0.6s ease;
       display: none;
     }
@@ -689,7 +692,7 @@
       top: 62px;
       left: 0;
       z-index: 100;
-      padding: 30px 40px;
+      padding: 30px 10px;
       display: none;
     }
     &:hover .nav__hoverbox3{
