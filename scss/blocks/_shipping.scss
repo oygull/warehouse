@@ -54,12 +54,68 @@
   transition-duration: 0.7s, 0.7s, 0.15s;
   transition-timing-function: ease;
 }
-
+.shipping__content{
+  padding: 100px 150px 50px 150px;
+}
 .test-shine:active:after {
   opacity: 0;
+}
+.shipping__title{
+  font-size: 14px;
+  font-weight: 700;
+  color: #222;
+  text-transform: uppercase;
+  margin: 13px 0 9px;
+}
+.shipping__text{
+  font-size: 13px;
+  font-weight: 400;
+  color: #666;
+  font-family: $roboto-font;
+  text-align: center
+}
+.shipping__desc{
+  @include flex-center();
+  flex-direction: column;
+  padding: 0 50px;
+}
+.vinova__shine{
+  height: 300px;
+  background-image: url('../../images/vinova\ .jpeg');
+  max-width: 100%;
+}
+@media screen and (max-width:992px){
+  .shipping__content{
+    padding: 100px 50px 50px 50px;
+  }
+  .shipping__desc{
+    padding: 0 20px;
+  }
+  .shipping__title{
+    text-align: center;
+  }
+}
+@media screen and (max-width:768px){
+  .shipping__content{
+    padding: 100px 50px 50px 50px;
+  }
+  .vinova__shine{
+    height: 150px;
+  }
 }
 @media screen and (max-width:576px){
   .shipping__item{
     margin-bottom: 20px;
   }
+  .shipping__item--second{
+    height: 180px;
+  }
+  .shipping__desc{
+    padding: 0 10px;
+    margin-bottom: 10px;
+  }
+  .shipping__title{
+    text-align: center;
+  }
+ 
 }

@@ -1,3 +1,13 @@
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    document.getElementById("header").classList.add('show-header');
+  } else {
+    document.getElementById("header").classList.remove('show-header');
+  }
+}
+
 var myModal = document.getElementById('myModal');
 var myInput = document.getElementById('myInput');
 var settings = document.getElementById('settings');
