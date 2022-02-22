@@ -1,0 +1,65 @@
+.shipping{
+  padding: 40px 20px;
+}
+.shipping__item{
+  position: relative;
+  height: 300px;
+}
+.test-shine {
+  width: 100%;
+  height: 100%;
+  background-color: #337bb2;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  display: inline-block;
+    
+}
+.shine-first{
+  background-image: url('../../images/shippinh-img1.jpeg');
+}
+.shine-second{
+  background-image: url('../../images/shipping-img2.jpeg');
+}
+.shine-third{
+  background-image: url('../../images/shipping-img3.jpeg');
+}
+
+.test-shine:after {
+  content: "";
+  position: absolute;
+    top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  opacity: 0;
+  transform: rotate(30deg);
+
+  background: rgba(255, 255, 255, 0.13);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.13) 77%,
+    rgba(255, 255, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0.0) 100%
+  );
+}
+
+.test-shine:hover:after {
+  opacity: 1;
+  left: 130%;
+  transition-property: left, top, opacity;
+  transition-duration: 0.7s, 0.7s, 0.15s;
+  transition-timing-function: ease;
+}
+
+.test-shine:active:after {
+  opacity: 0;
+}
+@media screen and (max-width:576px){
+  .shipping__item{
+    margin-bottom: 20px;
+  }
+}
